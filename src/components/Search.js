@@ -11,7 +11,6 @@ const Search = ({onSearch}) => {
     }
 
     const onSubmit = (e) => {
-        console.log('onSubmit running');
         if(!text) {
             alert('Please add a search query')
             return

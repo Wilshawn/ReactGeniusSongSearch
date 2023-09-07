@@ -10,8 +10,6 @@ function App() {
 
   // Search Query
   const searchQuery = async (query) => {
-    console.log(query);
-    console.log('search query fired');
     const res = await fetch(`https://cors-anywhere.herokuapp.com/https://api.genius.com/search?q=${query.text}`, {
       method: 'GET',
       headers: {
@@ -19,7 +17,6 @@ function App() {
       }
     });
     const data = await res.json();
-    console.log(data.response.hits);
     setSongs(data.response.hits);
   }
 
