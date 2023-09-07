@@ -8,11 +8,11 @@ const Song = ({ song }) => {
       </div>
       <div className='song-data'>
         <h3>{song.title}</h3>
-        <a href={song.primary_artist.url} className='artist-name' target='_blank'>
+        <a href={song.primary_artist.url} className='artist-name' target='_blank' rel='noreferrer'>
           By {song.artist_names}
         </a>
         <small>Released on {song.release_date_for_display}</small>
-        <a href={song.url} target='_blank'>View Lyrics</a>
+        <a href={song.url} target='_blank' rel='noreferrer'>View Lyrics</a>
       </div>
     </div>
   )
