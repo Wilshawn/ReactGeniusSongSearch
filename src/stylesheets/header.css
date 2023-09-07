@@ -1,0 +1,15 @@
+header {
+    align-items: center;
+    background: #fffc64;
+    display: flex;
+    font-size: 80%;
+    font-weight: 700;
+    justify-content: center;
+    padding: .75rem 0;
+    width: 100%;
+}
+
+header img {
+    margin: 0 .75rem;
+    width: 122px;
+}

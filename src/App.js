@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useState, useEffect } from 'react'
+import Header from './components/Header';
+import Search from './components/Search';
+import Songs from './components/Songs';
 
 function App() {
+  const [songs, setSongs] = useState([])
+
+  // Search Query
+  const searchQuery = async (query) => {
+    console.log(query);
+    console.log('search query fired');
+    const res = await fetch(`https://cors-anywhere.herokuapp.com/https://api.genius.com/search?q=${query.text}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer -paZEmQPo5A8yPCcOcwGznNDlRQaFGT0xNzRalZlvtjJ_P9rwLnH8PYhAPA14os5',
+      }
+    });
+    const data = await res.json();
+    console.log(data.response.hits);
+    setSongs(data.response.hits);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Search onSearch={searchQuery} />
+      <Songs songs={songs} />
     </div>
   );
 }

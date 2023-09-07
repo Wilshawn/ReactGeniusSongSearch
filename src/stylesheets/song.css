@@ -1,0 +1,53 @@
+.song-card {
+    flex-basis: 100%;
+    display: flex;
+    background: #fff;
+    margin-bottom: 1rem;
+    @media screen and (min-width: 576px) {
+        flex-basis: 49%;
+    }
+    @media screen and (min-width: 1200px) {
+        flex-basis: 32%;
+    }
+}
+
+.song-image {
+    flex-basis: 40%;
+}
+
+.song-image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.song-data {
+    align-self: center;
+    flex-basis: 60%;
+    padding: 1rem;
+    text-align: left;
+}
+
+.song-data h3 {
+    margin: 0 0 .5rem;
+}
+
+.song-data .artist-name {
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0 0 .25rem;
+    text-decoration: none;
+}
+
+.song-data small {
+    display: block;
+    margin-bottom: .15rem;
+}
+
+.song-data a {
+    color: #444;
+    font-weight: bold;
+    font-size: .75rem;
+}
