@@ -10,10 +10,10 @@ function App() {
 
   // Search Query
   const searchQuery = async (query) => {
-    const res = await fetch(`https://cors-anywhere.herokuapp.com/https://api.genius.com/search?q=${query.text}`, {
+    const res = await fetch(`https://proxy-ibmasyzzya-uc.a.run.app/https://api.genius.com/search?q=${query.text}`, {
       method: 'GET',
       headers: {
-        'Authorization': 'Bearer -paZEmQPo5A8yPCcOcwGznNDlRQaFGT0xNzRalZlvtjJ_P9rwLnH8PYhAPA14os5',
+        'Authorization': 'Bearer -paZEmQPo5A8yPCcOcwGznNDlRQaFGT0xNzRalZlvtjJ_P9rwLnH8PYhAPA14os5'
       }
     });
     const data = await res.json();
